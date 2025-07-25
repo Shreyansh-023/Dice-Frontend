@@ -332,28 +332,37 @@ export default function Home() {
                         </Box>
                       </>
                     )}
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={handleGenerate}
-                      disabled={loading || !csvFile}
-                      startIcon={loading ? <CircularProgress size={20} sx={{ color: "#000" }} /> : <DownloadIcon />}
-                      sx={{
-                        bgcolor: "#00e676",
-                        color: "#000",
-                        fontWeight: 700,
-                        fontSize: 20,
-                        borderRadius: 2,
-                        boxShadow: 2,
-                        minWidth: 220,
-                        minHeight: 56,
-                        '&:hover': { bgcolor: "#00c853" },
-                        transition: 'all 0.2s',
-                        zIndex: 2,
-                      }}
-                    >
-                      {loading ? "Generating..." : "Generate Report"}
-                    </Button>
+                   <Button
+  variant="contained"
+  color="primary"
+  onClick={handleGenerate}
+  disabled={loading || !csvFile}
+  startIcon={
+    loading ? (
+      <CircularProgress size={20} sx={{ color: "#fff" }} />
+    ) : (
+      <DownloadIcon />
+    )
+  }
+  sx={{
+    bgcolor: "#4caf50",           // MUI Green[500]
+    color: "#fff",                // White text for contrast
+    fontWeight: 700,
+    fontSize: 20,
+    borderRadius: 2,
+    boxShadow: 2,
+    minWidth: 220,
+    minHeight: 56,
+    '&:hover': {
+      bgcolor: "#388e3c",         // MUI Green[700]
+    },
+    transition: 'all 0.2s',
+    zIndex: 2,
+  }}
+>
+  {loading ? "Generating..." : "Generate Report"}
+</Button>
+
                   </Box>
                   {error && <Alert severity="error" sx={{ bgcolor: "#222", color: "#ff5252" }}>{error}</Alert>}
                   {reportUrl && (
