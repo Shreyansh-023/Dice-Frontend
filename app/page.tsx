@@ -111,10 +111,10 @@ export default function Home() {
           if (oldProgress >= 98) {
             return 98;
           }
-          const diff = 0.8 + Math.random() * 0.4; // 0.8-1.2% increment
+          const diff = 0.4 + Math.random() * 0.2; // 0.4-0.6% increment
           return Math.min(oldProgress + diff, 98);
         });
-      }, 250); // slower progress bar for ~25s
+      }, 250); // keep interval, smaller increment
       msgTimer = setInterval(() => {
         setMessageIndex((idx) => (idx + 1) % progressMessages.length);
       }, 3500);
